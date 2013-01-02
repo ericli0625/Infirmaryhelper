@@ -7,10 +7,12 @@
     <string name="TextView1">縣市</string>
     <string name="TextView2">鄉鎮市區</string>
     <string name="TextView3">科別</string>
-    <string name="sumit">搜尋</string>
+    <string name="submit">搜尋</string>
     <string name="cancel">重設</string>
-    <string name="title_activity_activity_menu">Activity_menu</string>
-    <string name="title_activity_activity_sqlite">ActivitySQLite</string>
-    <string name="title_activity_db_constants">DbConstants</string>
+    
+    <string name="telephone">電話:</string>
+    <string name="address">地址:</string>
+    
+    <string name="title_activity_activity_menu">menupage</string>
 
 </resources>

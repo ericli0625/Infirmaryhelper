@@ -2,6 +2,7 @@ package com.example.infirmaryhelper;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.os.Bundle;
@@ -10,10 +11,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -24,7 +23,8 @@ public class MainActivity extends Activity {
 	private String[] city = new String[] { "松山區", "大安區", "大同區", "中山區", "內湖區",
 			"南港區", "士林區", "北投區", "信義區", "中正區", "萬華區", "文山區" };// 起始畫面時預先載入第二下拉選單
 
-	private String[] category = new String[] { "中醫", "牙醫" };// 起始畫面時預先載入第三下拉選單
+	private String[] category = new String[] { "中醫", "牙科", "小兒科", "婦產科", "骨科",
+			"整形外科", "泌尿科", "皮膚科", "耳鼻喉科", "復健科" };// 起始畫面時預先載入第三下拉選單
 
 	// 第一下拉選取後載入第二下拉選單
 	private String[][] type2 = new String[][] {
@@ -42,37 +42,35 @@ public class MainActivity extends Activity {
 	private ArrayAdapter<String> adapter;
 	private Context context;
 	private String str1, str2, str3;
-	private TextView myTextView;
 
-	public DBHelper DH = null;
 	private ListView myListView;
-	private EditText myEditText;
 	private Cursor myCursor;
-	public int _id;
+	private int _id;
+	private String telephone, address,name;
+
+	private DBHelper DH = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		DH = new DBHelper(this);
+
 		findControl();
 		processSpinner();
-
-		DH = new DBHelper(this);
-		myCursor = DH.select();
-
-		SimpleCursorAdapter adapterDB = new SimpleCursorAdapter(context,
-				R.layout.activity_list, myCursor,
-				new String[] { DBHelper.FIELD_Name , DBHelper.FIELD_Address},
-				new int[] { R.id.listTextView1 }, 0);
-
-		myListView.setAdapter(adapterDB);
-
-		ShowListView();
 
 	}
 
 	private void ShowListView() {
+
+		SimpleCursorAdapter adapterDB = new SimpleCursorAdapter(context,
+				R.layout.activity_list, myCursor, new String[] {
+						DBHelper.FIELD_Name, DBHelper.FIELD_Address },
+				new int[] { R.id.listTextView1, R.id.listTextView2 }, 0);
+
+		myListView.setAdapter(adapterDB);
+
 		myListView
 				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -82,9 +80,27 @@ public class MainActivity extends Activity {
 
 						// myCursor移到選取的值
 						myCursor.moveToPosition(arg2);
-
 						_id = myCursor.getInt(0);
-//						myEditText.setText(myCursor.getString(1));
+						address = myCursor.getString(5);
+						telephone = myCursor.getString(6);
+						name = myCursor.getString(1);
+						
+						Intent intent = new Intent();
+						intent.setClass(MainActivity.this, ActivityMenu.class);
+
+						Bundle bundle = new Bundle();
+						bundle.putInt("id", _id);
+						
+						bundle.putString("name", name);
+						bundle.putString("address", address);
+						bundle.putString("telephone", telephone);
+
+						// 把bundle物件指派給Intent
+						intent.putExtras(bundle);
+
+						// Activity (ActivityMenu)
+						startActivity(intent);
+
 					}
 
 				});
@@ -97,7 +113,6 @@ public class MainActivity extends Activity {
 
 						SQLiteCursor sc = (SQLiteCursor) arg0.getSelectedItem();
 						_id = sc.getInt(0);
-//						myEditText.setText(sc.getString(1));
 					}
 
 					@Override
@@ -109,8 +124,7 @@ public class MainActivity extends Activity {
 	}
 
 	private void findControl() {
-		myListView = (ListView) this.findViewById(R.id.myListView);
-		myTextView = (TextView) findViewById(R.id.textResult);
+		myListView = (ListView) findViewById(R.id.myListView);
 		spinner = (Spinner) findViewById(R.id.spinner1);
 		spinner2 = (Spinner) findViewById(R.id.spinner2);
 		spinner3 = (Spinner) findViewById(R.id.spinner3);
@@ -165,10 +179,9 @@ public class MainActivity extends Activity {
 					android.R.layout.simple_spinner_item, type2[pos]);
 			// 載入第二個下拉選單Spinner
 			spinner2.setAdapter(adapter);
-			str1 = cities[position];
-			myTextView.setText(str1 + str2 + str3);
-			parent.setVisibility(View.VISIBLE);
-
+			str1 = parent.getSelectedItem().toString();
+			myCursor = DH.getData(str2, str3);
+			ShowListView();
 		}
 
 		@Override
@@ -181,9 +194,9 @@ public class MainActivity extends Activity {
 		@Override
 		public void onItemSelected(AdapterView<?> parent, View v, int position,
 				long id) {
-			str2 = type2[pos][position];
-			myTextView.setText(str1 + str2 + str3);
-			parent.setVisibility(View.VISIBLE);
+			str2 = parent.getSelectedItem().toString();
+			myCursor = DH.getData(str2, str3);
+			ShowListView();
 		}
 
 		@Override
@@ -196,9 +209,9 @@ public class MainActivity extends Activity {
 		@Override
 		public void onItemSelected(AdapterView<?> parent, View v, int position,
 				long id) {
-			str3 = category[position];
-			myTextView.setText(str1 + str2 + str3);
-			parent.setVisibility(View.VISIBLE);
+			str3 = parent.getSelectedItem().toString();
+			myCursor = DH.getData(str2, str3);
+			ShowListView();
 		}
 
 		@Override

@@ -26,14 +26,6 @@
             android:name="com.example.infirmaryhelper.ActivityMenu"
             android:label="@string/title_activity_activity_menu" >
         </activity>
-        <activity
-            android:name="com.example.infirmaryhelper.DBHelper"
-            android:label="@string/title_activity_activity_sqlite" >
-        </activity>
-        <activity
-            android:name="com.example.infirmaryhelper.DbConstants"
-            android:label="@string/title_activity_db_constants" >
-        </activity>
     </application>
 
 </manifest>
