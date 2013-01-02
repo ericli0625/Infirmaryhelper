@@ -3,13 +3,15 @@ package com.example.infirmaryhelper;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.widget.CheckedTextView;
+import android.widget.TextView;
+
+import com.google.android.maps.MapActivity;
 
 public class ActivityMenu extends Activity {
 
-	private CheckedTextView myCheckedTextView1;
-	private CheckedTextView myCheckedTextView2;
-	private CheckedTextView myCheckedTextView3;
+	private TextView myTextView1;
+	private TextView myTextView2;
+	private TextView myTextView3;
 	private int id;
 	private String name,address,telephone;
 	@Override
@@ -17,9 +19,9 @@ public class ActivityMenu extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 		
-		myCheckedTextView1 = (CheckedTextView) findViewById(R.id.listTextView3);
-		myCheckedTextView2 = (CheckedTextView) findViewById(R.id.listTextView4);
-		myCheckedTextView3 = (CheckedTextView) findViewById(R.id.listTextView5);
+		myTextView1 = (TextView) findViewById(R.id.listTextView3);
+		myTextView2 = (TextView) findViewById(R.id.listTextView4);
+		myTextView3 = (TextView) findViewById(R.id.listTextView5);
 		
 		Bundle bundle = this.getIntent().getExtras();
 		
@@ -28,13 +30,15 @@ public class ActivityMenu extends Activity {
 		address = bundle.getString("address");
 		telephone = bundle.getString("telephone");;
 		
-		myCheckedTextView1.setText("名稱:"+name);
-		myCheckedTextView2.setText("地址:"+address);
-		myCheckedTextView3.setText("電話:"+telephone);
+		String[] myStrings = new String [] {name, address, telephone};
+		
+		myTextView1.setText("名稱:"+name);
+		myTextView2.setText("地址:"+address);
+		myTextView3.setText("電話:"+telephone);
 		
 		
 	}
-
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

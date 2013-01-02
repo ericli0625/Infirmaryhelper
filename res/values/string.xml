@@ -10,9 +10,18 @@
     <string name="submit">搜尋</string>
     <string name="cancel">重設</string>
     
+    <string name="name">名稱:</string>
     <string name="telephone">電話:</string>
     <string name="address">地址:</string>
     
     <string name="title_activity_activity_menu">menupage</string>
 
+    <string name="app_about">關於</string>
+    <string name="app_exit">離開</string>
+    
+    <string name="app_exit_msg">再見了程式</string>
+    
+    <string name="str_no">取消</string>
+    <string name="str_ok">確定</string>
+    
 </resources>

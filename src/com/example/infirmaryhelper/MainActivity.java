@@ -1,12 +1,16 @@
 package com.example.infirmaryhelper;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -46,7 +50,7 @@ public class MainActivity extends Activity {
 	private ListView myListView;
 	private Cursor myCursor;
 	private int _id;
-	private String telephone, address,name;
+	private String telephone, address, name;
 
 	private DBHelper DH = null;
 
@@ -59,6 +63,60 @@ public class MainActivity extends Activity {
 
 		findControl();
 		processSpinner();
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, 0, 0, R.string.app_about);
+		menu.add(0, 1, 1, R.string.app_exit);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		super.onOptionsItemSelected(item);
+
+		switch (item.getItemId()) {
+		case 0:
+			openOptionsDialog();
+			break;
+		case 1:
+			finish();
+			break;
+
+		default:
+			break;
+		}
+
+		return true;
+	}
+
+	private void openOptionsDialog() {
+		new AlertDialog.Builder(this)
+				.setTitle(R.string.app_exit)
+				.setMessage(R.string.app_exit_msg)
+				.setNegativeButton(R.string.str_no,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+
+							}
+						})
+				.setPositiveButton(R.string.str_ok,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+								finish();
+							}
+						}).show();
 
 	}
 
@@ -84,13 +142,13 @@ public class MainActivity extends Activity {
 						address = myCursor.getString(5);
 						telephone = myCursor.getString(6);
 						name = myCursor.getString(1);
-						
+
 						Intent intent = new Intent();
 						intent.setClass(MainActivity.this, ActivityMenu.class);
 
 						Bundle bundle = new Bundle();
 						bundle.putInt("id", _id);
-						
+
 						bundle.putString("name", name);
 						bundle.putString("address", address);
 						bundle.putString("telephone", telephone);

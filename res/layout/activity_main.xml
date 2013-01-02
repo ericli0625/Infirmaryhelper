@@ -6,13 +6,14 @@
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" 
+        android:gravity="center" >
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gray"
+            android:background="@drawable/white"
             android:gravity="center"
             android:text="@string/TextView1" />
 
@@ -20,7 +21,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gray"
+            android:background="@drawable/white"
             android:gravity="center"
             android:text="@string/TextView2" />
 
@@ -28,7 +29,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gray"
+            android:background="@drawable/white"
             android:gravity="center"
             android:text="@string/TextView3" />
     </TableRow>
@@ -36,22 +37,26 @@
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" 
+        android:gravity="center" >
 
         <Spinner
             android:id="@+id/spinner1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center" />
 
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+            android:gravity="center"/>
 
         <Spinner
             android:id="@+id/spinner3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+            android:gravity="center" />
     </TableRow>
 
     <ListView
