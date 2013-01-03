@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
 	private Context context;
 	private String str1, str2, str3;
 
+	
 	private ListView myListView;
 	private Cursor myCursor;
 	private int _id;
@@ -89,7 +90,7 @@ public class MainActivity extends Activity {
 		default:
 			break;
 		}
-
+		
 		return true;
 	}
 
