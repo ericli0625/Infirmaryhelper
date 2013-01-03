@@ -68,22 +68,22 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 0, 0, R.string.app_about);
-		menu.add(0, 1, 1, R.string.app_exit);
-		return super.onCreateOptionsMenu(menu);
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_main , menu);
+		return true;
 	}
-
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 
 		super.onOptionsItemSelected(item);
 
 		switch (item.getItemId()) {
-		case 0:
-			openOptionsDialog();
+		case R.id.item1:
+			openOptionsDialogAbout();
 			break;
-		case 1:
-			finish();
+		case R.id.item2:
+			openOptionsDialogExit();
 			break;
 
 		default:
@@ -93,7 +93,24 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	private void openOptionsDialog() {
+	private void openOptionsDialogAbout() {
+		new AlertDialog.Builder(this)
+				.setTitle(R.string.app_about)
+				.setMessage(R.string.app_about_msg)
+				.setPositiveButton(R.string.str_ok,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+
+							}
+						}).show();
+
+	}
+
+	private void openOptionsDialogExit() {
 		new AlertDialog.Builder(this)
 				.setTitle(R.string.app_exit)
 				.setMessage(R.string.app_exit_msg)
@@ -119,7 +136,7 @@ public class MainActivity extends Activity {
 						}).show();
 
 	}
-
+	
 	private void ShowListView() {
 
 		SimpleCursorAdapter adapterDB = new SimpleCursorAdapter(context,

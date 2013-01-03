@@ -30,7 +30,7 @@ public class ActivityMenu extends Activity {
 		address = bundle.getString("address");
 		telephone = bundle.getString("telephone");;
 		
-		String[] myStrings = new String [] {name, address, telephone};
+//		String[] myStrings = new String [] {name, address, telephone};
 		
 		myTextView1.setText("名稱:"+name);
 		myTextView2.setText("地址:"+address);
