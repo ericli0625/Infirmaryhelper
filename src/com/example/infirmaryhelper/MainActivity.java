@@ -24,8 +24,7 @@ public class MainActivity extends Activity {
 			"新竹縣", "苗栗縣", "台中市", "彰化縣", "南投縣", "雲林縣", "嘉義市", "嘉義縣", "台南市",
 			"高雄市", "屏東縣", "宜蘭縣", "花蓮縣", "台東縣", "澎湖縣", "金門縣", "連江縣" };// 載入第一下拉選單
 
-	private String[] city = new String[] { "松山區", "大安區", "大同區", "中山區", "內湖區",
-			"南港區", "士林區", "北投區", "信義區", "中正區", "萬華區", "文山區" };// 起始畫面時預先載入第二下拉選單
+	private String[] city = new String[] { "仁愛區", "中正區", "信義區", "中山區", "安樂區", "暖暖區", "七堵區" };// 起始畫面時預先載入第二下拉選單
 
 	private String[] category = new String[] { "中醫", "牙科", "小兒科", "婦產科", "骨科",
 			"整形外科", "泌尿科", "皮膚科", "耳鼻喉科", "復健科" };// 起始畫面時預先載入第三下拉選單
@@ -46,7 +45,6 @@ public class MainActivity extends Activity {
 	private ArrayAdapter<String> adapter;
 	private Context context;
 	private String str1, str2, str3;
-
 	
 	private ListView myListView;
 	private Cursor myCursor;

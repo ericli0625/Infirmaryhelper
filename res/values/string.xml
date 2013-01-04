@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">infirmaryhelper</string>
-
-    <string name="menu_settings">設定</string>
+    <string name="app_name">台灣診所查詢</string>
     
     <string name="TextView1">縣市</string>
     <string name="TextView2">鄉鎮市區</string>
@@ -17,15 +15,18 @@
     
     <string name="title_activity_main">首頁</string>
     <string name="title_activity_menu">診所內容</string>
-	<string name="title_activity_map">診所位址</string>
-    
+	
     <string name="str_no">取消</string>
     <string name="str_ok">確定</string>
     
     <string name="app_about">關於</string>
     <string name="app_exit">離開</string>
     
-    <string name="app_about_msg">無聊寫寫</string>
-    <string name="app_exit_msg">再見了程式</string>
+    <string name="app_about_msg">提供大眾能方便的搜尋醫療診所</string>
+    <string name="app_exit_msg">離開系統</string>
+    
+    <string name="navigation">導航</string>
+    <string name="displaymap">顯示位址</string>
+    
     
 </resources>
