@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cities_init">
+        <item>基隆市</item>
+        <item>台北市</item>
+        <item>新北市</item>
+        <item>桃園縣</item>
+        <item>新竹市</item>
+        <item>新竹縣</item>
+        <item>苗栗縣</item>
+        <item>台中市</item>
+        <item>彰化縣</item>
+        <item>南投縣</item>
+        <item>雲林縣</item>
+        <item>嘉義市</item>
+        <item>嘉義縣</item>
+        <item>台南市</item>
+        <item>高雄市</item>
+        <item>屏東縣</item>
+        <item>宜蘭縣</item>
+        <item>花蓮縣</item>
+        <item>台東縣</item>
+        <item>澎湖縣</item>
+        <item>金門縣</item>
+        <item>連江縣</item>
+    </string-array>
+    <string-array name="city_init">
+        <item>仁愛區</item>
+        <item>中正區</item>
+        <item>信義區</item>
+        <item>中山區</item>
+        <item>安樂區</item>
+        <item>暖暖區</item>
+        <item>七堵區</item>
+    </string-array>
+    <string-array name="category_init">
+        <item>牙科</item>
+        <item>中醫</item>
+        <item>小兒科</item>
+        <item>婦產科</item>
+        <item>骨科</item>
+        <item>整形外科</item>
+        <item>泌尿科</item>
+        <item>皮膚科</item>
+        <item>耳鼻喉科</item>
+        <item>復健科</item>
+    </string-array>
+
+</resources>

@@ -2,31 +2,27 @@
 <resources>
 
     <string name="app_name">台灣診所查詢</string>
-    
     <string name="TextView1">縣市</string>
     <string name="TextView2">鄉鎮市區</string>
     <string name="TextView3">科別</string>
     <string name="submit">搜尋</string>
     <string name="cancel">重設</string>
-    
     <string name="name">名稱:</string>
     <string name="telephone">電話:</string>
     <string name="address">地址:</string>
-    
     <string name="title_activity_main">首頁</string>
     <string name="title_activity_menu">診所內容</string>
-	
     <string name="str_no">取消</string>
     <string name="str_ok">確定</string>
-    
+    <string name="str_ok_mail">回報</string>
+    <string name="str_no_mail">返回</string>
     <string name="app_about">關於</string>
     <string name="app_exit">離開</string>
-    
-    <string name="app_about_msg">提供大眾能方便的搜尋醫療診所</string>
-    <string name="app_exit_msg">離開系統</string>
-    
+    <string name="app_email">建議</string>
+    <string name="app_about_msg">希望本系統能夠更方便的提供給大眾搜尋診所</string>
+    <string name="app_exit_msg">確定離開系統?</string>
+    <string name="app_email_msg">回報系統問題及改善系統建議</string>
     <string name="navigation">導航</string>
     <string name="displaymap">顯示位址</string>
-    
-    
+     
 </resources>
