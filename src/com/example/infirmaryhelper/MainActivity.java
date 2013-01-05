@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 	private Spinner spinner, spinner2, spinner3;
 	private ArrayAdapter<CharSequence> adapter;
 	private Context context;
-	private String str1, str2, str3;
+	private String str1, str2, str3,selectedCities;
 
 	private ListView myListView;
 	private Cursor myCursor;
@@ -228,14 +228,14 @@ public class MainActivity extends Activity {
 
 	private Spinner CreateSpinner(Spinner spinner, int value, int array) {
 		// 将可选内容与ArrayAdapter连接起来
-		adapter = ArrayAdapter.createFromResource(this, array,
+		ArrayAdapter<CharSequence> adapterTemp = ArrayAdapter.createFromResource(this, array,
 				android.R.layout.simple_spinner_item);
 
 		// 设置下拉列表的风格
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		adapterTemp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		// 将adapter 添加到spinner中
-		spinner.setAdapter(adapter);
+		spinner.setAdapter(adapterTemp);
 
 		switch (value) {
 		case R.id.spinner1:
@@ -263,9 +263,11 @@ public class MainActivity extends Activity {
 			// 讀取第一個下拉選單是選擇第幾個
 			pos = spinner.getSelectedItemPosition();
 			// 載入第二個下拉選單Spinner
-			spinner2.setAdapter(choeseCities(pos));
+			selectedCities = choeseCities(pos);
+			
+			spinner2.setAdapter(adapter);
 			str1 = parent.getSelectedItem().toString();
-			myCursor = DH.getData(str2, str3);
+			myCursor = DH.getData(selectedCities,str2, str3,0);
 			ShowListView();
 		}
 
@@ -280,7 +282,7 @@ public class MainActivity extends Activity {
 		public void onItemSelected(AdapterView<?> parent, View v, int position,
 				long id) {
 			str2 = parent.getSelectedItem().toString();
-			myCursor = DH.getData(str2, str3);
+			myCursor = DH.getData(selectedCities,str2, str3,0);
 			ShowListView();
 		}
 
@@ -295,7 +297,7 @@ public class MainActivity extends Activity {
 		public void onItemSelected(AdapterView<?> parent, View v, int position,
 				long id) {
 			str3 = parent.getSelectedItem().toString();
-			myCursor = DH.getData(str2, str3);
+			myCursor = DH.getData(selectedCities,str2, str3,0);
 			ShowListView();
 		}
 
@@ -305,76 +307,98 @@ public class MainActivity extends Activity {
 		}
 	};
 
-	private ArrayAdapter<CharSequence> choeseCities(int pos) {
+	private String choeseCities(int pos) {
 
 		int value = 0;
 		
 		switch (pos) {
 		case 0:
-			value = R.array.city_init;
+			value = R.array.keelung_city;
+			selectedCities = new String("keelung_city");
 			break;
 		case 1:
 			value = R.array.taipei_city;
+//			selectedCities = new String("taipei_city");
 			break;
 		case 2:
 			value = R.array.xinbei_city;
+			selectedCities = new String("xinbei_city");
 			break;
 		case 3:
-			value = R.array.taoyuan_country;
+			value = R.array.taoyuan_county;
+			selectedCities = new String("taoyuan_county");
 			break;
 		case 4:
 			value = R.array.hsinchu_city;
+			selectedCities = new String("hsinchu_city");
 			break;
 		case 5:
-			value = R.array.hsinchu_country;
+			value = R.array.hsinchu_county;
+			selectedCities = new String("hsinchu_county");
 			break;
 		case 6:
-			value = R.array.miaoli_country;
+			value = R.array.miaoli_county;
+			selectedCities = new String("miaoli_county");
 			break;
 		case 7:
 			value = R.array.taichung_city;
+//			selectedCities = new String("taichung_city");
 			break;
 		case 8:
 			value = R.array.changhua_county;
+//			selectedCities = new String("changhua_county");
 			break;
 		case 9:
 			value = R.array.nantou_county;
+			selectedCities = new String("nantou_county");
 			break;
 		case 10:
 			value = R.array.yunlin_county;
+//			selectedCities = new String("yunlin_county");
 			break;
 		case 11:
 			value = R.array.chiayi_city;
+//			selectedCities = new String("chiayi_city");
 			break;
 		case 12:
 			value = R.array.chiayi_county;
+//			selectedCities = new String("changhua_county");
 			break;
 		case 13:
 			value = R.array.tainan_city;
+//			selectedCities = new String("tainan_city");
 			break;
 		case 14:
 			value = R.array.Kaohsiung_city;
+//			selectedCities = new String("Kaohsiung_city");
 			break;
 		case 15:
 			value = R.array.pingtung_county;
+//			selectedCities = new String("pingtung_county");
 			break;
 		case 16:
 			value = R.array.yilan_county;
+//			selectedCities = new String("yilan_county");
 			break;
 		case 17:
 			value = R.array.hualien_county;
+//			selectedCities = new String("hualien_county");
 			break;
 		case 18:
 			value = R.array.taitung_county;
+//			selectedCities = new String("taitung_county");
 			break;
 		case 19:
 			value = R.array.penghu_county;
+//			selectedCities = new String("penghu_county");
 			break;
 		case 20:
 			value = R.array.kinmen_county;
+//			selectedCities = new String("kinmen_county");
 			break;
 		case 21:
 			value = R.array.lianjiang_county;
+//			selectedCities = new String("lianjiang_county");
 			break;
 		default:
 			break;
@@ -382,7 +406,7 @@ public class MainActivity extends Activity {
 
 		adapter = ArrayAdapter.createFromResource(this, value,android.R.layout.simple_spinner_item);
 
-		return adapter;
+		return selectedCities;
 	}
 
 }

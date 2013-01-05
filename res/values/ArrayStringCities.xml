@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="keelung_city">
+        <item>仁愛區</item>
+        <item>中正區</item>
+        <item>信義區</item>
+        <item>中山區</item>
+        <item>安樂區</item>
+        <item>暖暖區</item>
+        <item>七堵區</item>
+    </string-array>
+    
     <string-array name="taipei_city">
         <item>松山區</item>
         <item>大安區</item>
@@ -45,7 +55,7 @@
         <item>萬里區</item>
         <item>烏來區</item>
     </string-array>
-    <string-array name="taoyuan_country">
+    <string-array name="taoyuan_county">
         <item>桃園市</item>
         <item>龜山鄉</item>
         <item>八德市</item>
@@ -65,7 +75,7 @@
         <item>北區</item>
         <item>香山區</item>
     </string-array>
-    <string-array name="hsinchu_country">
+    <string-array name="hsinchu_county">
         <item>竹北市</item>
         <item>關西鎮</item>
         <item>新埔鎮</item>
@@ -80,7 +90,7 @@
         <item>尖石鄉</item>
         <item>五峰鄉</item>
     </string-array>
-    <string-array name="miaoli_country">
+    <string-array name="miaoli_county">
         <item>苗栗市</item>
         <item>苑裡鎮</item>
         <item>通霄鎮</item>
