@@ -32,7 +32,7 @@ public class DBConnector {
 			params.add(new BasicNameValuePair("query_string", query_string));
 			httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 			HttpResponse httpResponse = httpClient.execute(httpPost);
-			// view_account.setText(httpResponse.getStatusLine().toString());
+	
 			HttpEntity httpEntity = httpResponse.getEntity();
 			InputStream inputStream = httpEntity.getContent();
 

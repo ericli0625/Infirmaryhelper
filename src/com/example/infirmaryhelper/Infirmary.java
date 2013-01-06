@@ -1,6 +1,6 @@
 package com.example.infirmaryhelper;
 
-public class Person {
+public class Infirmary {
 	private String _id;
 	private String category;
 	private String name;

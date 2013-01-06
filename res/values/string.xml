@@ -10,19 +10,31 @@
     <string name="name">名稱:</string>
     <string name="telephone">電話:</string>
     <string name="address">地址:</string>
+    
     <string name="title_activity_main">首頁</string>
     <string name="title_activity_menu">診所內容</string>
+    
     <string name="str_no">取消</string>
     <string name="str_ok">確定</string>
+    
     <string name="str_ok_mail">回報</string>
     <string name="str_no_mail">返回</string>
+    
     <string name="app_about">關於</string>
     <string name="app_exit">離開</string>
     <string name="app_email">建議</string>
+    
     <string name="app_about_msg">希望本系統能夠更方便的提供給大眾搜尋診所</string>
     <string name="app_exit_msg">確定離開系統?</string>
     <string name="app_email_msg">回報系統問題及改善系統建議</string>
+    
     <string name="navigation">導航</string>
-    <string name="displaymap">顯示位址</string>
+    <string name="displaymap">顯示診所位址</string>
      
+    <string name="app_connect">警告</string>
+    <string name="app_connect_msg">偵測不到網路,請開啟網路</string>
+    
+    <string name="app_none_result">提示</string>
+    <string name="app_none_result_msg">尚無診所資料</string>
+    
 </resources>
