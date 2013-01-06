@@ -26,6 +26,7 @@
         <item>連江縣</item>
     </string-array>
     <string-array name="city_init">
+        <item>全部地區</item>
         <item>仁愛區</item>
         <item>中正區</item>
         <item>信義區</item>
@@ -36,7 +37,7 @@
     </string-array>
     <string-array name="category_init">
         <item>牙科</item>
-        <item>中醫</item>
+<!--         <item>中醫</item>
         <item>小兒科</item>
         <item>婦產科</item>
         <item>骨科</item>
@@ -44,7 +45,7 @@
         <item>泌尿科</item>
         <item>皮膚科</item>
         <item>耳鼻喉科</item>
-        <item>復健科</item>
+        <item>復健科</item> -->
     </string-array>
 
 </resources>

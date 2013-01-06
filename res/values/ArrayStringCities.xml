@@ -2,6 +2,7 @@
 <resources>
 
     <string-array name="keelung_city">
+        <item>全部地區</item>
         <item>仁愛區</item>
         <item>中正區</item>
         <item>信義區</item>
@@ -10,8 +11,8 @@
         <item>暖暖區</item>
         <item>七堵區</item>
     </string-array>
-    
     <string-array name="taipei_city">
+        <item>全部地區</item>
         <item>松山區</item>
         <item>大安區</item>
         <item>大同區</item>
@@ -26,6 +27,7 @@
         <item>文山區</item>
     </string-array>
     <string-array name="xinbei_city">
+        <item>全部地區</item>
         <item>板橋區</item>
         <item>三重區</item>
         <item>永和區</item>
@@ -56,6 +58,7 @@
         <item>烏來區</item>
     </string-array>
     <string-array name="taoyuan_county">
+        <item>全部地區</item>
         <item>桃園市</item>
         <item>龜山鄉</item>
         <item>八德市</item>
@@ -71,11 +74,13 @@
         <item>觀音鄉"</item>
     </string-array>
     <string-array name="hsinchu_city">
+        <item>全部地區</item>
         <item>東區</item>
         <item>北區</item>
         <item>香山區</item>
     </string-array>
     <string-array name="hsinchu_county">
+        <item>全部地區</item>
         <item>竹北市</item>
         <item>關西鎮</item>
         <item>新埔鎮</item>
@@ -91,6 +96,7 @@
         <item>五峰鄉</item>
     </string-array>
     <string-array name="miaoli_county">
+        <item>全部地區</item>
         <item>苗栗市</item>
         <item>苑裡鎮</item>
         <item>通霄鎮</item>
@@ -111,6 +117,7 @@
         <item>泰安鄉</item>
     </string-array>
     <string-array name="taichung_city">
+        <item>全部地區</item>
         <item>西區</item>
         <item>北區</item>
         <item>中區</item>
@@ -142,6 +149,7 @@
         <item>和平區</item>
     </string-array>
     <string-array name="changhua_county">
+        <item>全部地區</item>
         <item>彰化市</item>
         <item>鹿港鎮</item>
         <item>北斗鎮</item>
@@ -169,6 +177,7 @@
         <item>溪州鄉</item>
     </string-array>
     <string-array name="nantou_county">
+        <item>全部地區</item>
         <item>南投市</item>
         <item>埔里鎮</item>
         <item>草屯鎮</item>
@@ -184,6 +193,7 @@
         <item>仁愛鄉</item>
     </string-array>
     <string-array name="yunlin_county">
+        <item>全部地區</item>
         <item>斗六市</item>
         <item>斗南鎮</item>
         <item>虎尾鎮</item>
@@ -206,10 +216,12 @@
         <item>水林鄉</item>
     </string-array>
     <string-array name="chiayi_city">
+        <item>全部地區</item>
         <item>西區</item>
         <item>東區</item>
     </string-array>
     <string-array name="chiayi_county">
+        <item>全部地區</item>
         <item>太保市</item>
         <item>朴子市</item>
         <item>大林鎮</item>
@@ -230,6 +242,7 @@
         <item>阿里山鄉</item>
     </string-array>
     <string-array name="tainan_city">
+        <item>全部地區</item>
         <item>南區</item>
         <item>東區</item>
         <item>北區</item>
@@ -268,7 +281,8 @@
         <item>關廟區</item>
         <item>龍崎區</item>
     </string-array>
-    <string-array name="Kaohsiung_city">
+    <string-array name="kaohsiung_city">
+        <item>全部地區</item>
         <item>鹽埕區</item>
         <item>鼓山區</item>
         <item>左營區</item>
@@ -309,6 +323,7 @@
         <item>那瑪夏區</item>
     </string-array>
     <string-array name="pingtung_county">
+        <item>全部地區</item>
         <item>屏東市</item>
         <item>潮州鎮</item>
         <item>東港鎮</item>
@@ -344,6 +359,7 @@
         <item>三地門鄉</item>
     </string-array>
     <string-array name="yilan_county">
+        <item>全部地區</item>
         <item>宜蘭市</item>
         <item>羅東鎮</item>
         <item>蘇澳鎮</item>
@@ -358,6 +374,7 @@
         <item>南澳鄉</item>
     </string-array>
     <string-array name="hualien_county">
+        <item>全部地區</item>
         <item>花蓮市</item>
         <item>鳳林鎮</item>
         <item>玉里鎮</item>
@@ -373,6 +390,7 @@
         <item>萬榮鄉</item>
     </string-array>
     <string-array name="taitung_county">
+        <item>全部地區</item>
         <item>台東市</item>
         <item>成功鎮</item>
         <item>關山鎮</item>
@@ -391,6 +409,7 @@
         <item>太麻里鄉</item>
     </string-array>
     <string-array name="penghu_county">
+        <item>全部地區</item>
         <item>馬公市</item>
         <item>湖西鄉</item>
         <item>白沙鄉</item>
@@ -399,6 +418,7 @@
         <item>七美鄉</item>
     </string-array>
     <string-array name="kinmen_county">
+        <item>全部地區</item>
         <item>金城鎮</item>
         <item>金湖鎮</item>
         <item>金沙鎮</item>
@@ -407,6 +427,7 @@
         <item>烏坵鄉</item>
     </string-array>
     <string-array name="lianjiang_county">
+        <item>全部地區</item>
         <item>南竿鄉</item>
         <item>北竿鄉</item>
         <item>莒光鄉</item>

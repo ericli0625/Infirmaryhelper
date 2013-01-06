@@ -1,12 +1,11 @@
 package com.example.infirmaryhelper;
 
 import android.app.Activity;
-import android.content.Context;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,7 +19,7 @@ public class ActivityMenu extends Activity implements LocationListener {
 	private TextView myTextView1;
 	private TextView myTextView2;
 	private TextView myTextView3;
-	private Button myButton1;
+	private Button myButton1, myButton2;
 	private String name, address, telephone;
 	Intent myintent;
 	Bundle bundleSend;
@@ -34,6 +33,7 @@ public class ActivityMenu extends Activity implements LocationListener {
 		myTextView2 = (TextView) findViewById(R.id.listTextView4);
 		myTextView3 = (TextView) findViewById(R.id.listTextView5);
 		myButton1 = (Button) findViewById(R.id.displaymapButton);
+		myButton2 = (Button) findViewById(R.id.callButton);
 
 		Bundle bundle = this.getIntent().getExtras();
 
@@ -49,11 +49,18 @@ public class ActivityMenu extends Activity implements LocationListener {
 			public void onClick(View v) {
 				// Perform action on click
 
-				String mapUri = "geo:0,0?q=" + name + ","+address+"";
-				
+				String mapUri = "geo:0,0?q=" + name + "," + address + "";
+
 				myintent = new Intent(Intent.ACTION_VIEW, Uri.parse(mapUri));
 
 				startActivity(myintent);
+			}
+		});
+
+		myButton2.setOnClickListener(new Button.OnClickListener() {
+			public void onClick(View v) {
+				// Perform action on click
+				openOptionsDialogCall();
 			}
 		});
 
@@ -78,6 +85,36 @@ public class ActivityMenu extends Activity implements LocationListener {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	private void openOptionsDialogCall() {
+		new AlertDialog.Builder(this)
+				.setTitle(R.string.app_call)
+				.setMessage(R.string.app_call_msg)
+				.setPositiveButton(R.string.str_ok,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+								Intent call = new Intent(
+										"android.intent.action.CALL", Uri
+												.parse("tel:" + telephone));
+								startActivity(call);
+							}
+						})
+				.setNegativeButton(R.string.str_no,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+
+							}
+						}).show();
+
 	}
 
 	@Override

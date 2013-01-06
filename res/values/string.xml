@@ -11,6 +11,8 @@
     <string name="telephone">電話:</string>
     <string name="address">地址:</string>
     
+    <string name="button_submit">搜尋診所</string>
+    
     <string name="title_activity_main">首頁</string>
     <string name="title_activity_menu">診所內容</string>
     
@@ -24,11 +26,14 @@
     <string name="app_exit">離開</string>
     <string name="app_email">建議</string>
     
-    <string name="app_about_msg">希望本系統能夠更方便的提供給大眾搜尋診所</string>
-    <string name="app_exit_msg">確定離開系統?</string>
-    <string name="app_email_msg">回報系統問題及改善系統建議</string>
+    <string name="app_call">撥打診所電話</string>
+    <string name="app_call_msg">確定撥打?</string>
     
-    <string name="navigation">導航</string>
+    <string name="app_about_msg">希望本系統能夠提供大眾快速的搜尋診所</string>
+    <string name="app_exit_msg">確定離開系統?</string>
+    <string name="app_email_msg">回報問題及改善建議</string>
+    
+    <string name="callPhone">打電話至診所</string>
     <string name="displaymap">顯示診所位址</string>
      
     <string name="app_connect">警告</string>
