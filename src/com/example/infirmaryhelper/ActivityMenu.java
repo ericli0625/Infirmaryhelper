@@ -12,7 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ActivityMenu extends Activity implements LocationListener {
 
@@ -20,26 +22,33 @@ public class ActivityMenu extends Activity implements LocationListener {
 	private TextView myTextView2;
 	private TextView myTextView3;
 	private Button myButton1, myButton2;
-	private String name, address, telephone;
+	private ImageButton myButton3;
+	private String name, address, telephone, category;
 	Intent myintent;
 	Bundle bundleSend;
+
+	private DBHelper DH = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 
+		DH = new DBHelper(this);
+
 		myTextView1 = (TextView) findViewById(R.id.listTextView3);
 		myTextView2 = (TextView) findViewById(R.id.listTextView4);
 		myTextView3 = (TextView) findViewById(R.id.listTextView5);
 		myButton1 = (Button) findViewById(R.id.displaymapButton);
 		myButton2 = (Button) findViewById(R.id.callButton);
+		myButton3 = (ImageButton) findViewById(R.id.favorButton);
 
 		Bundle bundle = this.getIntent().getExtras();
 
 		name = bundle.getString("name");
 		address = bundle.getString("address");
 		telephone = bundle.getString("telephone");
+		category = bundle.getString("category");
 
 		myTextView1.setText("名稱:" + name);
 		myTextView2.setText("地址:" + address);
@@ -64,6 +73,15 @@ public class ActivityMenu extends Activity implements LocationListener {
 			}
 		});
 
+		myButton3.setOnClickListener(new ImageButton.OnClickListener() {
+			public void onClick(View v) {
+				// Perform action on click
+				DH.insert(name, category, address, telephone);
+				Toast.makeText(v.getContext(), "新增至我的最愛", Toast.LENGTH_LONG)
+						.show();
+			}
+		});
+
 	}
 
 	@Override
@@ -79,8 +97,10 @@ public class ActivityMenu extends Activity implements LocationListener {
 		super.onOptionsItemSelected(item);
 
 		switch (item.getItemId()) {
-		case 0:
-
+		case R.id.item_favor:
+			Intent intent = new Intent();
+			intent.setClass(ActivityMenu.this, ActivityFavor.class);
+			startActivity(intent);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

@@ -26,8 +26,10 @@ public class DBConnector {
 
 		try {
 			HttpClient httpClient = new DefaultHttpClient();
-			HttpPost httpPost = new HttpPost(
-					"http://140.118.175.194/conectionDB.php");
+			
+//			HttpPost httpPost = new HttpPost("http://140.118.175.194/conectionDB.php");
+			HttpPost httpPost = new HttpPost("http://infirmaryhelper.ap01.aws.af.cm");
+
 			ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("query_string", query_string));
 			httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));

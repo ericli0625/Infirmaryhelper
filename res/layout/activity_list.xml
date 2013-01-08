@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:textColor="@drawable/dark"
     android:orientation="vertical" >
 
     <CheckedTextView
@@ -10,7 +9,7 @@
         android:id="@+id/listTextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@drawable/red" >
+        android:textColor="@color/red" >
     </CheckedTextView>
     
     <CheckedTextView
@@ -19,7 +18,7 @@
         android:id="@+id/listTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@drawable/gray" >
+        android:textColor="@color/gray" >
     </CheckedTextView>
 
 </LinearLayout>

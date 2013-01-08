@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -34,10 +35,9 @@ public class MainActivity extends Activity {
 
 	private Button myButton;
 	private ListView myListView;
-	private String telephone, address, name;
+	private String telephone, address, name, category;
 
-	// sqlite
-	private DBHelper DH = null;
+	public ProgressDialog myDialog = null;
 
 	// http
 	private String result = new String();
@@ -59,13 +59,13 @@ public class MainActivity extends Activity {
 		// 判斷是否有上網
 		if (AppStatus.getInstance(this).isOnline(this)) {
 
-//			DH = new DBHelper(this);
 			processSpinner();
 			visitExternalLinks();
 
 			myButton.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					// Perform action on click
+
 					String sql;
 					String strText = new String("全部地區");
 					if (str2.equals(strText)) {
@@ -79,6 +79,7 @@ public class MainActivity extends Activity {
 						result = DBConnector.executeQuery(sql);
 					}
 					ShowListView(result);
+
 				}
 			});
 
@@ -110,6 +111,11 @@ public class MainActivity extends Activity {
 		case R.id.item3:
 			openOptionsDialogExit();
 			break;
+		case R.id.item_favor:
+			Intent intent = new Intent();
+			intent.setClass(MainActivity.this, ActivityFavor.class);
+			startActivity(intent);
+			return true;
 		default:
 			break;
 		}
@@ -261,6 +267,8 @@ public class MainActivity extends Activity {
 						name = infirmary.get("name");
 						address = infirmary.get("address");
 						telephone = infirmary.get("telephone");
+						category = infirmary.get("category");
+
 						Intent intent = new Intent();
 						intent.setClass(MainActivity.this, ActivityMenu.class);
 
@@ -269,6 +277,7 @@ public class MainActivity extends Activity {
 						bundle.putString("name", name);
 						bundle.putString("address", address);
 						bundle.putString("telephone", telephone);
+						bundle.putString("category", category);
 
 						// 把bundle物件指派給Intent
 						intent.putExtras(bundle);
