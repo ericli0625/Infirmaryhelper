@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class ActivitySearch extends Activity {
 
@@ -241,6 +242,7 @@ public class ActivitySearch extends Activity {
 		if (result.length() > 5) {
 			Infirmarys = JsonToList(result);
 			setInAdapter();
+			Toast.makeText(this, "搜尋完成", Toast.LENGTH_LONG).show();
 		} else {
 			List<Map<String, String>> lists = new ArrayList<Map<String, String>>();
 			String[] from = { "name", "address" };

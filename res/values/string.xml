@@ -46,6 +46,9 @@
     <string name="app_connect">警告</string>
     <string name="app_connect_msg">偵測不到網路,請開啟網路</string>
     
+    <string name="app_no_context">提示</string>
+    <string name="app_no_context_msg">請輸入搜尋內容</string>
+    
     <string name="app_none_result">提示</string>
     <string name="app_none_result_msg">尚無診所資料</string>
     

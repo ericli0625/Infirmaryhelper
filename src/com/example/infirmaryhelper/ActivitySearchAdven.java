@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.TextView;
 
@@ -87,11 +88,17 @@ public class ActivitySearchAdven extends Activity {
 				public void onClick(View v) {
 					// Perform action on click
 					String str1 = editText_Search.getText().toString();
-					String sql = "SELECT * FROM " + selectedCities
-							+ " where name like '%" + str1 + "%'";
-					result = DBConnector.executeQuery(sql);
 					
-					ShowListView(result);
+					if (!str1.equals("")) {
+						String sql = "SELECT * FROM " + selectedCities
+								+ " where name like '%" + str1 + "%'";
+						result = DBConnector.executeQuery(sql);
+						
+						ShowListView(result);
+					} else {
+						openOptionsDialogIsNotContext();
+					}
+					
 				}
 			});
 
@@ -125,6 +132,22 @@ public class ActivitySearchAdven extends Activity {
 
 	}
 
+	private void openOptionsDialogIsNotContext() {
+		new AlertDialog.Builder(this)
+				.setTitle(R.string.app_no_context)
+				.setMessage(R.string.app_no_context_msg)
+				.setPositiveButton(R.string.str_ok,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+							}
+						}).show();
+
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -231,6 +254,7 @@ public class ActivitySearchAdven extends Activity {
 		if (result.length() > 5) {
 			Infirmarys = JsonToList(result);
 			setInAdapter();
+			Toast.makeText(this, "搜尋完成", Toast.LENGTH_LONG).show();
 		} else {
 			List<Map<String, String>> lists = new ArrayList<Map<String, String>>();
 			String[] from = { "name", "address" };
