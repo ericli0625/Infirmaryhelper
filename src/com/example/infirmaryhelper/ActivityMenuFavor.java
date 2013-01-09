@@ -17,13 +17,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ActivityMenu extends Activity implements LocationListener {
+public class ActivityMenuFavor extends Activity implements LocationListener {
 
 	private TextView myTextView1;
 	private TextView myTextView2;
 	private TextView myTextView3;
 	private Button myButton1, myButton2;
-	private ImageButton myButton3;
 	private String name, address, telephone, category;
 	
 	Intent myintent;
@@ -34,16 +33,15 @@ public class ActivityMenu extends Activity implements LocationListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_menu);
+		setContentView(R.layout.activity_menu_favor);
 
 		DH = new DBHelper(this);
 
-		myTextView1 = (TextView) findViewById(R.id.listTextView3);
-		myTextView2 = (TextView) findViewById(R.id.listTextView4);
-		myTextView3 = (TextView) findViewById(R.id.listTextView5);
-		myButton1 = (Button) findViewById(R.id.displaymapButton);
-		myButton2 = (Button) findViewById(R.id.callButton);
-		myButton3 = (ImageButton) findViewById(R.id.favorButton);
+		myTextView1 = (TextView) findViewById(R.id.listTextView3_favor);
+		myTextView2 = (TextView) findViewById(R.id.listTextView4_favor);
+		myTextView3 = (TextView) findViewById(R.id.listTextView5_favor);
+		myButton1 = (Button) findViewById(R.id.displaymapButton_favor);
+		myButton2 = (Button) findViewById(R.id.callButton_favor);
 
 		Bundle bundle = this.getIntent().getExtras();
 
@@ -72,25 +70,6 @@ public class ActivityMenu extends Activity implements LocationListener {
 			}
 		});
 
-		myButton3.setOnClickListener(new ImageButton.OnClickListener() {
-			public void onClick(View v) {
-				// Perform action on click
-				Cursor cursor = DH.matchData(name, category, address, telephone);
-
-				int rows_num= cursor.getCount();
-				
-				if (rows_num==1) {
-					Toast.makeText(v.getContext(), "您已經新增過了", Toast.LENGTH_LONG)
-							.show();
-				} else {
-					DH.insert(name, category, address, telephone);
-					Toast.makeText(v.getContext(), "新增至我的最愛", Toast.LENGTH_LONG)
-							.show();
-				}
-
-			}
-		});
-
 	}
 
 	@Override
@@ -108,7 +87,7 @@ public class ActivityMenu extends Activity implements LocationListener {
 		switch (item.getItemId()) {
 		case R.id.item_favor:
 			Intent intent = new Intent();
-			intent.setClass(ActivityMenu.this, ActivityFavor.class);
+			intent.setClass(ActivityMenuFavor.this, ActivityFavor.class);
 			startActivity(intent);
 			return true;
 		default:

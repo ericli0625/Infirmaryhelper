@@ -4,32 +4,57 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <CheckedTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/listTextNameFavor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-    </CheckedTextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-    <CheckedTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/listTextCategoryFavor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-    </CheckedTextView>
+        <CheckedTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/listTextCategoryFavor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </CheckedTextView>
+    </LinearLayout>
 
-    <CheckedTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/listTextAddressFavor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-    </CheckedTextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-    <CheckedTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/listTextPhoneFavor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-    </CheckedTextView>
+        <CheckedTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/listTextNameFavor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red" >
+        </CheckedTextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <CheckedTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/listTextAddressFavor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </CheckedTextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <CheckedTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/listTextPhoneFavor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </CheckedTextView>
+    </LinearLayout>
 
 </LinearLayout>

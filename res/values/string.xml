@@ -5,8 +5,10 @@
     <string name="TextView1">縣市</string>
     <string name="TextView2">鄉鎮市區</string>
     <string name="TextView3">科別</string>
+    
     <string name="submit">搜尋</string>
     <string name="cancel">重設</string>
+    
     <string name="name">名稱:</string>
     <string name="telephone">電話:</string>
     <string name="address">地址:</string>
@@ -14,8 +16,11 @@
     <string name="button_submit">搜尋診所</string>
     
     <string name="title_activity_main">首頁</string>
+    <string name="title_activity_search">一般搜尋</string>
     <string name="title_activity_menu">診所內容</string>
     <string name="title_activity_favor">我的最愛</string>
+    <string name="title_activity_menu_favor">診所內容</string>
+    <string name="title_activity_search_adven">關鍵字搜尋</string>
     
     <string name="str_no">取消</string>
     <string name="str_ok">確定</string>
@@ -46,5 +51,20 @@
     
     <string name="dialog_title">請稍後片刻</string>
     <string name="dialog_context">正在搜尋中</string>
+    
+    <string name="TextViewCategoryFavor">科別:</string>
+    <string name="TextViewNameFavor">名稱:</string>
+    <string name="TextViewAddressFavor">地址:</string>
+    <string name="TextViewPhoneFavor">電話:</string>
+    
+    <string name="menu_delete">刪除此項目</string>
+    
+    <string name="button_SearchAdven">關鍵字搜尋</string>
+    <string name="button_Search">一般搜尋</string>
+    
+    
+    <string name="input_title">請輸入關鍵字:</string>
+    <string name="button_Search_Reset">重置</string>
+    <string name="button_Search_Submit">查詢</string>
     
 </resources>

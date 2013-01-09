@@ -37,6 +37,18 @@
             android:name="com.example.infirmaryhelper.ActivityFavor"
             android:label="@string/title_activity_favor" >
         </activity>
+        <activity
+            android:name="com.example.infirmaryhelper.ActivityMenuFavor"
+            android:label="@string/title_activity_menu_favor" >
+        </activity>
+        <activity
+            android:name="com.example.infirmaryhelper.ActivitySearch"
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name="com.example.infirmaryhelper.ActivitySearchAdven"
+            android:label="@string/title_activity_search_adven" >
+        </activity>
     </application>
 
 </manifest>

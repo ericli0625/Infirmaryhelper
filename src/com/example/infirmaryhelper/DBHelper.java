@@ -1,6 +1,5 @@
 package com.example.infirmaryhelper;
 
-import android.R.integer;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -53,13 +52,16 @@ public class DBHelper extends SQLiteOpenHelper {
 	 * rawQuery()方法的第一个参数为select语句；第二个参数为select语句中占位符参数的值，如果select语句没有使用占位符，
 	 * 该参数可以设置为null。带占位符参数的select语句使用例子如下：
 	 */
-	public Cursor getData(String citiesTag, String cityTag, String categoryTag,
-			int value) {
+	public Cursor matchData(String name_t, String category_t, String address_t,
+			String telephone_t) {
 		SQLiteDatabase db = this.getReadableDatabase();
 
-		String sql = "select * from " + citiesTag + "";
+		String sql = "select * from " + TABLE_NAME + " where " + FIELD_Name
+				+ " like ? and " + FIELD_Address + " like ? and "
+				+ FIELD_Telephone + " like ?";
 
-		Cursor cursor = db.rawQuery(sql, null);
+		Cursor cursor = db.rawQuery(sql, new String[] { name_t, address_t,
+				telephone_t });
 
 		// 注意：不寫會出錯
 		if (cursor != null) {
@@ -75,17 +77,18 @@ public class DBHelper extends SQLiteOpenHelper {
 		db.delete(TABLE_NAME, where, whereValues);
 	}
 
-	public long insert(String name_t,String category_t,String address_t,String telephone_t) {
+	public long insert(String name_t, String category_t, String address_t,
+			String telephone_t) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues cv = new ContentValues();
-		
+
 		cv.put(FIELD_Name, name_t);
 		cv.put(FIELD_Category, category_t);
 		cv.put(FIELD_Address, address_t);
 		cv.put(FIELD_Telephone, telephone_t);
-		
+
 		long row = db.insert(TABLE_NAME, null, cv);
-		
+
 		return row;
 	}
 
