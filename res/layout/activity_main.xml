@@ -10,7 +10,9 @@
         android:layout_above="@+id/buttonSearchAdven"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="61dp"
-        android:text="@string/button_Search" />
+        android:text="@string/button_Search" 
+        android:background="@drawable/image_btn_press"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/buttonSearchAdven"
@@ -19,6 +21,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="196dp"
-        android:text="@string/button_SearchAdven" />
+        android:text="@string/button_SearchAdven" 
+        android:background="@drawable/image_btn_press"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

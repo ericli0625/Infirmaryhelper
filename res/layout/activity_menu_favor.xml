@@ -6,7 +6,6 @@
     android:orientation="vertical" >
 
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listTextView3_favor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +15,6 @@
     </TextView>
 
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listTextView4_favor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +24,6 @@
     </TextView>
 
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listTextView5_favor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,14 +40,17 @@
             android:id="@+id/displaymapButton_favor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/displaymap" />
+            android:background="@drawable/image_btn_press"
+            android:text="@string/displaymap"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/callButton_favor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/callPhone" />
-
+            android:background="@drawable/image_btn_press"
+            android:text="@string/callPhone"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </LinearLayout>

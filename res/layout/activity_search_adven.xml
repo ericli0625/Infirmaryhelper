@@ -1,6 +1,6 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
+    android:layout_height="fill_parent"
     android:background="@color/white" >
 
     <RelativeLayout
@@ -33,7 +33,9 @@
             android:layout_alignRight="@+id/editText_Search"
             android:layout_below="@+id/editText_Search"
             android:layout_marginRight="23dp"
-            android:text="@string/button_Search_Reset" />
+            android:background="@drawable/image_btn_press"
+            android:text="@string/button_Search_Reset"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/textView1_search"
@@ -50,7 +52,9 @@
             android:layout_alignBaseline="@+id/button_Search_Reset"
             android:layout_alignBottom="@+id/button_Search_Reset"
             android:layout_alignRight="@+id/textView2_search"
-            android:text="@string/button_Search_Submit" />
+            android:background="@drawable/image_btn_press"
+            android:text="@string/button_Search_Submit"
+            android:textColor="@color/white" />
 
         <Spinner
             android:id="@+id/spinner4"

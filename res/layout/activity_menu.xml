@@ -6,7 +6,6 @@
     android:orientation="vertical" >
 
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +15,6 @@
     </TextView>
 
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listTextView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +24,6 @@
     </TextView>
 
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listTextView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,22 +40,26 @@
             android:id="@+id/displaymapButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/displaymap" />
+            android:background="@drawable/image_btn_press"
+            android:text="@string/displaymap"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/callButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/callPhone" />
+            android:background="@drawable/image_btn_press"
+            android:text="@string/callPhone"
+            android:textColor="@color/white" />
 
         <ImageButton
             android:id="@+id/favorButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/selector"
-            android:background="@drawable/star"
             android:adjustViewBounds="true"
-          	android:padding="0dip" />
+            android:background="@drawable/star"
+            android:padding="0dip"
+            android:src="@drawable/selector" />
     </LinearLayout>
 
 </LinearLayout>
