@@ -18,7 +18,7 @@
     <string name="title_activity_main">首頁</string>
     <string name="title_activity_search">一般搜尋</string>
     <string name="title_activity_menu">診所內容</string>
-    <string name="title_activity_favor">我的最愛</string>
+    <string name="title_activity_favor">常用診所</string>
     <string name="title_activity_menu_favor">診所內容</string>
     <string name="title_activity_search_adven">關鍵字搜尋</string>
     
@@ -41,7 +41,7 @@
     
     <string name="callPhone">打電話至診所</string>
     <string name="displaymap">顯示診所位址</string>
-    <string name="addFavor">加入我的最愛</string>
+    <string name="addFavor">加入常用診所</string>
     
     <string name="app_connect">警告</string>
     <string name="app_connect_msg">偵測不到網路,請開啟網路</string>
