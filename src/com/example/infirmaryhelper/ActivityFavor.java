@@ -131,16 +131,17 @@ public class ActivityFavor extends Activity {
 		_id = myCursor.getInt(0);
 		DH.delete(_id);
 
-		Cursor myCursor_temp = DH.select();
+		DH = new DBHelper(this);
+        myCursor = DH.select();
 
-		adapter = new SimpleCursorAdapter(this, R.layout.activity_list_favor,
-				myCursor_temp, new String[] { DH.FIELD_Name, DH.FIELD_Category,
+        SimpleCursorAdapter adapter_t = new SimpleCursorAdapter(this, R.layout.activity_list_favor,
+				myCursor, new String[] { DH.FIELD_Name, DH.FIELD_Category,
 						DH.FIELD_Address, DH.FIELD_Telephone }, new int[] {
 						R.id.listTextNameFavor, R.id.listTextCategoryFavor,
 						R.id.listTextAddressFavor, R.id.listTextPhoneFavor }, 0);
 
-		adapter.notifyDataSetChanged();
-		myListViewFavor.setAdapter(adapter);
+        adapter_t.notifyDataSetChanged();
+		myListViewFavor.setAdapter(adapter_t);
 
 		_id = 0;
 	}
