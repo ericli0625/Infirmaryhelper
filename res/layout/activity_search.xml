@@ -1,7 +1,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white" >
+    android:background="@drawable/wood">
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -13,7 +13,6 @@
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:gravity="center"
             android:text="@string/TextView1" />
 
@@ -21,7 +20,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+
             android:gravity="center"
             android:text="@string/TextView2" />
 
@@ -29,7 +28,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+
             android:gravity="center"
             android:text="@string/TextView3" />
     </TableRow>
@@ -71,6 +70,6 @@
         android:id="@+id/myListView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white" />
+       />
 
 </TableLayout>

@@ -65,6 +65,13 @@
     <string name="button_SearchAdven">關鍵字搜尋</string>
     <string name="button_Search">一般搜尋</string>
     
+    <string name="menu_always">常用診所</string>
+    <string name="menu_about">關於</string>
+    <string name="menu_propose">建議</string>
+    <string name="menu_leave">離開</string>
+    <string name="menu_favor">我的最愛</string>
+    
+    
     
     <string name="input_title">請輸入關鍵字:</string>
     <string name="button_Search_Reset">重置</string>

@@ -10,6 +10,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -129,7 +130,8 @@ public class ActivityFavor extends Activity {
 		myCursor.moveToPosition(id);
 
 		_id = myCursor.getInt(0);
-		DH.delete(_id);
+        String name_temp= myCursor.getString(1);
+        DH.delete(_id);
 
 		DH = new DBHelper(this);
         myCursor = DH.select();
@@ -144,6 +146,9 @@ public class ActivityFavor extends Activity {
 		myListViewFavor.setAdapter(adapter_t);
 
 		_id = 0;
+
+        Toast.makeText(this, name_temp+"已被刪除" , Toast.LENGTH_SHORT)
+                .show();
 	}
 
 }

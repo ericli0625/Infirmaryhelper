@@ -1,28 +1,40 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white" >
+    android:background="@drawable/wood"
+    android:orientation="vertical"
+    android:gravity="center">
 
-    <Button
-        android:id="@+id/buttonSearch"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonSearchAdven"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="61dp"
-        android:text="@string/button_Search" 
-        android:background="@drawable/image_btn_press"
-        android:textColor="@color/white"/>
 
-    <Button
+    <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="120dip"
+                  android:orientation="vertical"
+                  android:gravity="center">
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/image_btn_press"
+            android:text="@string/button_Search"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dip"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+        <Button
         android:id="@+id/buttonSearchAdven"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="196dp"
-        android:text="@string/button_SearchAdven" 
         android:background="@drawable/image_btn_press"
+        android:text="@string/button_SearchAdven"
         android:textColor="@color/white"/>
-
-</RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
