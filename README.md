@@ -1,4 +1,4 @@
 infirmaryhelper
 ===============
 
-android 
+This Android APP for finding clinics
