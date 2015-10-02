@@ -1,0 +1,75 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/wood">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         >
+
+        <TextView
+            android:id="@+id/textView2_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editText_Search"
+            android:layout_alignParentTop="true"
+            android:text="@string/input_title" />
+
+        <EditText
+            android:id="@+id/editText_Search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView2_search"
+            android:layout_marginRight="24dp"
+            android:ems="10"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/button_Search_Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/editText_Search"
+            android:layout_below="@+id/editText_Search"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/image_btn_press"
+            android:text="@string/button_Search_Reset"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textView1_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/TextView1" />
+
+        <Button
+            android:id="@+id/button_Search_Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button_Search_Reset"
+            android:layout_alignBottom="@+id/button_Search_Reset"
+            android:layout_alignRight="@+id/textView2_search"
+            android:background="@drawable/image_btn_press"
+            android:text="@string/button_Search_Submit"
+            android:textColor="@color/white" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView2_search"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/myListView_Search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+</TableLayout>

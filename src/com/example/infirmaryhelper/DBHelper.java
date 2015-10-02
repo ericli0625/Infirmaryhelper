@@ -1,5 +1,6 @@
 package com.example.infirmaryhelper;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,16 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-	private final static String DATABASE_NAME = "todo.db";
+	private final static String DATABASE_NAME = "infirmaryhelper.db";
 	private final static int DATABASE_VERSION = 1;
-	private final static String TABLE_NAME = "taoyuan";
+	private final static String TABLE_NAME = "favorite";
 	private final static String FIELD_Id = "_id";
 	public final static String FIELD_Name = "name";
-	private final static String FIELD_Cities = "cities";
-	private final static String FIELD_City = "city";
-	private final static String FIELD_Category = "category";
+	public final static String FIELD_Category = "category";
 	public final static String FIELD_Address = "address";
-	private final static String FIELD_Telephone = "telephone";
+	public final static String FIELD_Telephone = "telephone";
 
 	public DBHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,10 +26,9 @@ public class DBHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 
 		String sql = "CREATE TABLE " + TABLE_NAME + " ( " + FIELD_Id
-				+ " INTEGER primary key autoincrement, " + " " + FIELD_Name
-				+ " text," + FIELD_Cities + " text," + FIELD_City + " text,"
-				+ FIELD_Category + " text," + FIELD_Address + " text,"
-				+ FIELD_Telephone + " text)";
+				+ " INTEGER primary key autoincrement, " + FIELD_Name
+				+ " text," + FIELD_Category + " text," + FIELD_Address
+				+ " text," + FIELD_Telephone + " text)";
 		db.execSQL(sql);
 	}
 
@@ -54,15 +52,16 @@ public class DBHelper extends SQLiteOpenHelper {
 	 * rawQuery()方法的第一个参数为select语句；第二个参数为select语句中占位符参数的值，如果select语句没有使用占位符，
 	 * 该参数可以设置为null。带占位符参数的select语句使用例子如下：
 	 */
-	public Cursor getData(String citesTag, String cityTag, String categoryTag) {
+	public Cursor matchData(String name_t, String category_t, String address_t,
+			String telephone_t) {
 		SQLiteDatabase db = this.getReadableDatabase();
 
-		String sql = "select * from " + TABLE_NAME + " where " + FIELD_Cities
-				+ " like ? and " + FIELD_City + " like ? and " + FIELD_Category
-				+ " like ?";
+		String sql = "select * from " + TABLE_NAME + " where " + FIELD_Name
+				+ " like ? and " + FIELD_Address + " like ? and "
+				+ FIELD_Telephone + " like ?";
 
-		Cursor cursor = db.rawQuery(sql, new String[] { citesTag, cityTag,
-				categoryTag });
+		Cursor cursor = db.rawQuery(sql, new String[] { name_t, address_t,
+				telephone_t });
 
 		// 注意：不寫會出錯
 		if (cursor != null) {
@@ -71,19 +70,26 @@ public class DBHelper extends SQLiteOpenHelper {
 		return cursor;
 	}
 
-	public Cursor getData(String cityTag, String categoryTag) {
-		SQLiteDatabase db = this.getReadableDatabase();
+	public void delete(int id) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		String where = FIELD_Id + " = ?";
+		String[] whereValues = { Integer.toString(id) };
+		db.delete(TABLE_NAME, where, whereValues);
+	}
 
-		String sql = "select * from " + TABLE_NAME + " where " + FIELD_City
-				+ " like '"+cityTag+"' and "+FIELD_Category+" like '"+categoryTag+"' ";
+	public long insert(String name_t, String category_t, String address_t,
+			String telephone_t) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues cv = new ContentValues();
 
-		Cursor cursor = db.rawQuery(sql, null);
+		cv.put(FIELD_Name, name_t);
+		cv.put(FIELD_Category, category_t);
+		cv.put(FIELD_Address, address_t);
+		cv.put(FIELD_Telephone, telephone_t);
 
-		// 注意：不寫會出錯
-		if (cursor != null) {
-			cursor.moveToFirst(); // 將指標移到第一筆資料
-		}
-		return cursor;
+		long row = db.insert(TABLE_NAME, null, cv);
+
+		return row;
 	}
 
 }

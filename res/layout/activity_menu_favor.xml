@@ -3,11 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wood"
-    android:orientation="vertical"
-        >
+    android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/listTextView3"
+        android:id="@+id/listTextView3_favor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name"
@@ -16,7 +15,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/listTextView4"
+        android:id="@+id/listTextView4_favor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/address"
@@ -25,7 +24,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/listTextView5"
+        android:id="@+id/listTextView5_favor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/telephone"
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/displaymapButton"
+            android:id="@+id/displaymapButton_favor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/image_btn_press"
@@ -46,22 +45,12 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/callButton"
+            android:id="@+id/callButton_favor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/image_btn_press"
             android:text="@string/callPhone"
             android:textColor="@color/white" />
-
-        <ImageButton
-            android:contentDescription="@string/app_name"
-            android:id="@+id/favorButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@drawable/star"
-            android:padding="0dip"
-            android:src="@drawable/selector" />
     </LinearLayout>
 
 </LinearLayout>

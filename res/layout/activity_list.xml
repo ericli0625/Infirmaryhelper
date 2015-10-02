@@ -2,24 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:textColor="@drawable/dark"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <CheckedTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listTextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@drawable/white" >
+        android:textColor="@color/blue_a" >
     </CheckedTextView>
     
     <CheckedTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:textAppearance="?android:attr/textAppearanceSmall" 
         android:id="@+id/listTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@drawable/gray" >
+        android:textColor="@color/gray" >
     </CheckedTextView>
 
 </LinearLayout>

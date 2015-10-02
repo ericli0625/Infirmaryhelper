@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="category_med">
-        <item >中醫</item>
-        <item >牙醫</item>
-    </string-array>
-    
-</resources>

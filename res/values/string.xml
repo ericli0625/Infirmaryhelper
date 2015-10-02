@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">infirmaryhelper</string>
-
-    <string name="menu_settings">設定</string>
-    
+    <string name="app_name">台灣診所查詢</string>
     <string name="TextView1">縣市</string>
     <string name="TextView2">鄉鎮市區</string>
     <string name="TextView3">科別</string>
+    
     <string name="submit">搜尋</string>
     <string name="cancel">重設</string>
     
@@ -15,17 +13,68 @@
     <string name="telephone">電話:</string>
     <string name="address">地址:</string>
     
+    <string name="button_submit">搜尋診所</string>
+    
     <string name="title_activity_main">首頁</string>
+    <string name="title_activity_search">一般搜尋</string>
     <string name="title_activity_menu">診所內容</string>
-	<string name="title_activity_map">診所位址</string>
+    <string name="title_activity_favor">常用診所</string>
+    <string name="title_activity_menu_favor">診所內容</string>
+    <string name="title_activity_search_adven">關鍵字搜尋</string>
     
     <string name="str_no">取消</string>
     <string name="str_ok">確定</string>
     
+    <string name="str_ok_mail">回報</string>
+    <string name="str_no_mail">返回</string>
+    
     <string name="app_about">關於</string>
     <string name="app_exit">離開</string>
+    <string name="app_email">建議</string>
     
-    <string name="app_about_msg">無聊寫寫</string>
-    <string name="app_exit_msg">再見了程式</string>
+    <string name="app_call">撥打診所電話</string>
+    <string name="app_call_msg">確定撥打?</string>
+    
+    <string name="app_about_msg">希望本系統能夠提供大眾快速的搜尋診所</string>
+    <string name="app_exit_msg">確定離開系統?</string>
+    <string name="app_email_msg">回報問題及改善建議</string>
+    
+    <string name="callPhone">打電話至診所</string>
+    <string name="displaymap">顯示診所位址</string>
+    <string name="addFavor">加入常用診所</string>
+    
+    <string name="app_connect">警告</string>
+    <string name="app_connect_msg">偵測不到網路,請開啟網路</string>
+    
+    <string name="app_no_context">提示</string>
+    <string name="app_no_context_msg">請輸入搜尋內容</string>
+    
+    <string name="app_none_result">提示</string>
+    <string name="app_none_result_msg">尚無診所資料</string>
+    
+    <string name="dialog_title">請稍後片刻</string>
+    <string name="dialog_context">正在搜尋中</string>
+    
+    <string name="TextViewCategoryFavor">科別:</string>
+    <string name="TextViewNameFavor">名稱:</string>
+    <string name="TextViewAddressFavor">地址:</string>
+    <string name="TextViewPhoneFavor">電話:</string>
+    
+    <string name="menu_delete">刪除此項目</string>
+    
+    <string name="button_SearchAdven">關鍵字搜尋</string>
+    <string name="button_Search">一般搜尋</string>
+    
+    <string name="menu_always">常用診所</string>
+    <string name="menu_about">關於</string>
+    <string name="menu_propose">建議</string>
+    <string name="menu_leave">離開</string>
+    <string name="menu_favor">我的最愛</string>
+    
+    
+    
+    <string name="input_title">請輸入關鍵字:</string>
+    <string name="button_Search_Reset">重置</string>
+    <string name="button_Search_Submit">查詢</string>
     
 </resources>
